@@ -1,0 +1,76 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Leanne Graham",
+      "username": "Bret",
+      "email": "Sincere@april.biz"
+    },
+    {
+      "id": "4",
+      "name": "Patricia Lebsack",
+      "username": "Karianne",
+      "email": "Julianne.OConner@kory.org"
+    },
+    {
+      "id": "5",
+      "name": "Chelsey Dietrich",
+      "username": "Kamren",
+      "email": "Lucio_Hettinger@annie.ca"
+    },
+    {
+      "id": "7",
+      "name": "Huỳnh Thảo",
+      "username": "Thao",
+      "email": "huynhthao1974@gmail.com"
+    },
+    {
+      "id": "3fcb",
+      "name": "nhật quy",
+      "username": "quynn",
+      "email": "q@gmail.com"
+    },
+    {
+      "id": "7ae7",
+      "name": "sá",
+      "username": "đsdsd",
+      "email": "a@gmail.com"
+    },
+    {
+      "id": "3a6e",
+      "name": "nq",
+      "username": "quynn",
+      "email": "q@gmail"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Điện thoại",
+      "createdAt": 1616346753759,
+      "updatedAt": 1616346753759
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "iPhone 12 Pro",
+      "createdAt": 1616346753759,
+      "updatedAt": 1616346753759,
+      "categoryId": 1,
+      "salePrice": 15000000
+    },
+    {
+      "id": "2",
+      "name": "iPhone 15 Pro Max",
+      "createdAt": 1616346753759,
+      "updatedAt": 1616346753759,
+      "categoryId": 1,
+      "salePrice": 25000000
+    }
+  ],
+  "profile": {
+    "name": "Po"
+  },
+  "$schema": "./node_modules/json-server/schema.json"
+}
