@@ -1,5 +1,6 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
-import { Table } from "react-bootstrap";
+import { Button, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const List = () => {
@@ -7,9 +8,21 @@ const List = () => {
   useEffect(() => {
     fetch("http://localhost:5000/users")
       .then((res) => res.json())
-      .then((data) => setList(data), []);
-  });
+      .then((data) => setList(data));
+  }, []);
   if (!list) return <p>Loading!</p>;
+  const handleSubmit = (id) => {
+    const conf = window.confirm("Do you want to delete?");
+    if (conf) {
+      axios
+        .delete(`http://localhost:5000/users/${id}`)
+        .then((res) => {
+          alert("Delete successfully!");
+          setList((prevList) => prevList.filter((list) => list.id !== id));
+        })
+        .catch((err) => console.log(err));
+    }
+  };
   return (
     <div className="container">
       <h1 className="text-center">List User</h1>
@@ -36,13 +49,16 @@ const List = () => {
               <td>{item.username}</td>
               <td>{item.email}</td>
               <td>
-                <Link to="/update/:id" className="btn btn-success">
+                <Link to={`/update/${item.id}`} className="btn btn-success">
                   Update
                 </Link>{" "}
                 {"  "}
-                <Link to="/detele" className="btn btn-danger">
-                  Detele
-                </Link>
+                <Button
+                  onClick={() => handleSubmit(item.id)}
+                  className="btn btn-danger"
+                >
+                  Delete
+                </Button>
               </td>
             </tr>
           ))}

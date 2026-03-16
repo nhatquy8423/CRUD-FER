@@ -9,15 +9,15 @@ const Update = () => {
   const [inputData, setInputData] = useState({
     name: "",
     username: "",
-    email: ",",
+    email: "",
   });
   const navigate = useNavigate();
   useEffect(() => {
     axios
       .get("http://localhost:5000/users/" + id)
-      .then((res) => res.setInputData(res.data))
+      .then((res) => setInputData(res.data))
       .catch((err) => console.log(err));
-  });
+  }, [id]);
   const handelSubmit = (event) => {
     event.preventDefault();
     const form = event.currentTarget;
@@ -55,7 +55,7 @@ const Update = () => {
               }
             ></Form.Control>
           </Form.Group>
-          <Form.Group as={Col} md="12" controlId="validationCustom01">
+          <Form.Group as={Col} md="12" controlId="validationCustom02">
             <Form.Label>UserName</Form.Label>
             <Form.Control
               required
@@ -67,12 +67,12 @@ const Update = () => {
               }
             ></Form.Control>
           </Form.Group>
-          <Form.Group as={Col} md="12" controlId="validationCustom01">
+          <Form.Group as={Col} md="12" controlId="validationCustomUsername">
             <Form.Label>Email</Form.Label>
             <Form.Control
               required
-              type="text"
-              name="name"
+              type="email"
+              name="email"
               value={inputData.email}
               onChange={(e) =>
                 setInputData({ ...inputData, email: e.target.value })

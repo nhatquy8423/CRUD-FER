@@ -54,7 +54,7 @@ const Create = () => {
             <Form.Control
               required
               type="text"
-              name="name"
+              name="username"
               onChange={(e) =>
                 setInputData({ ...inputData, username: e.target.value })
               }
@@ -66,7 +66,7 @@ const Create = () => {
             <Form.Control
               required
               type="email"
-              name="name"
+              name="email"
               onChange={(e) =>
                 setInputData({ ...inputData, email: e.target.value })
               }
